@@ -1,8 +1,8 @@
 import { FlatList } from 'react-native';
 import { useAppContext } from '../context/AppContext';
-import DetailItem from './DetailItem';
+import ListItem from './ListItem';
 
-function DetailsScreen({ navigation }) {
+function ListScreen({ navigation }) {
   const list = useAppContext();
 
   if (!list) {
@@ -13,9 +13,9 @@ function DetailsScreen({ navigation }) {
     <FlatList
       data={list}
       renderItem={({ item }) => (
-        <DetailItem
+        <ListItem
           list={item}
-          onPress={() => navigation.navigate('Profile', { id: item.id })}
+          onPress={() => navigation.navigate('Detail', { id: item.id })}
         />
       )}
       keyExtractor={(item) => item.id}
@@ -23,4 +23,4 @@ function DetailsScreen({ navigation }) {
   );
 }
 
-export default DetailsScreen;
+export default ListScreen;

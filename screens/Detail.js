@@ -1,7 +1,7 @@
 import { View, Text, StyleSheet, Dimensions, Image } from 'react-native';
 import { useAppContext } from '../context/AppContext';
 
-function ProfileScreen({ route }) {
+function DetailScreen({ route }) {
   const list = useAppContext();
   const id = route.params.id;
 
@@ -9,7 +9,7 @@ function ProfileScreen({ route }) {
   Object.keys(list).forEach((detailCard) => {
     if (list[detailCard].id === id) Card = list[detailCard];
   });
-
+  console.log(Card.image);
   return (
     <View style={styles.container}>
       <View style={styles.cardContainer}>
@@ -93,4 +93,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default ProfileScreen;
+export default DetailScreen;

@@ -1,6 +1,6 @@
 import { View, Text, StyleSheet, TouchableOpacity, Image } from 'react-native';
 
-function DetailItem({ list, onPress }) {
+function ListItem({ list, onPress }) {
   return (
     <TouchableOpacity style={styles.main_container} onPress={onPress}>
       <View style={styles.container}>
@@ -26,7 +26,7 @@ const styles = StyleSheet.create({
   },
   tinyLogo: {
     width: 350,
-    height: 200,
+    height: 500,
     borderRadius: 20,
   },
   movieTitle: {
@@ -40,4 +40,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default DetailItem;
+export default ListItem;

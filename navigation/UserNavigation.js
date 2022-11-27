@@ -1,5 +1,5 @@
-import DetailsScreen from '../screens/DetailsScreen';
-import Profile from '../screens/Profile';
+import ListScreen from '../screens/ListScreen';
+import Detail from '../screens/Detail';
 import { createStackNavigator } from '@react-navigation/stack';
 
 const Stack = createStackNavigator();
@@ -7,8 +7,8 @@ const Stack = createStackNavigator();
 const UserStackNavigation = () => {
   return (
     <Stack.Navigator>
-      <Stack.Screen name="Details" component={DetailsScreen} />
-      <Stack.Screen name="Profile" component={Profile} />
+      <Stack.Screen name="List" component={ListScreen} />
+      <Stack.Screen name="Detail" component={Detail} />
     </Stack.Navigator>
   );
 };

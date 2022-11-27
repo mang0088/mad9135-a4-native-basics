@@ -9,7 +9,7 @@ import Ionicons from 'react-native-vector-icons/Ionicons';
 import HomeScreen from './screens/HomeScreen';
 
 const homeName = 'Home';
-const detailsName = 'Details';
+const listName = 'List';
 
 const Tab = createBottomTabNavigator();
 
@@ -21,28 +21,36 @@ export default function App() {
           <Tab.Navigator
             initialRouteName={homeName}
             screenOptions={({ route }) => ({
+              tabBarActiveTintColor: 'blue',
+              tabBarInactiveTintColor: 'grey',
+              tabBarLabelStyle: {
+                fontSize: 12,
+                fontWeight: '800',
+                paddingBottom: 2,
+              },
+              tabBarStyle: [
+                {
+                  display: 'flex',
+                },
+                null,
+              ],
               tabBarIcon: ({ focused, color, size }) => {
                 let iconName;
                 let routeName = route.name;
 
                 if (routeName === homeName) {
                   iconName = focused ? 'home' : 'home-outline';
-                } else if (routeName === detailsName) {
+                } else if (routeName === listName) {
                   iconName = focused ? 'list' : 'list-outline';
                 }
 
                 return <Ionicons name={iconName} size={size} color={color} />;
               },
             })}
-            tabBarOptions={{
-              activeTintColor: 'blue',
-              inactiveTintColor: 'grey',
-              labelStyle: { paddingBottom: 8, fontSize: 10 },
-            }}
           >
             <Tab.Screen name="Home" component={HomeScreen} />
             <Tab.Screen
-              name="Details"
+              name="List"
               component={UserStackNavigation}
               options={{ headerShown: false }}
             />
